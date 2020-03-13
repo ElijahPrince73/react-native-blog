@@ -3,8 +3,14 @@ import React, { createContext, Children } from 'react'
 const BlogContext = createContext()
 
 export const BlogProvider = ({ children }) => {
+  const blogPosts = [
+    { title: 'Blog Post 1' },
+    { title: 'Blog Post 2' },
+    { title: 'Blog Post 3' }
+  ]
+
   return (
-    <BlogContext.Provider value={5} thing={2}>
+    <BlogContext.Provider value={blogPosts}>
       {children}
     </BlogContext.Provider>
   )
