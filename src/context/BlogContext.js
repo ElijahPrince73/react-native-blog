@@ -4,8 +4,10 @@ const BlogContext = createContext()
 
 export const BlogProvider = ({ children }) => {
   return (
-    <BlogContext.Provider >
+    <BlogContext.Provider value={5} thing={2}>
       {children}
     </BlogContext.Provider>
   )
 }
+
+export default BlogContext
