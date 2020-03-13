@@ -7,7 +7,7 @@ const IndexScreen = () => {
 
   return (
     <View>
-      <Text>INdex screen</Text>
+      <Text>Index screen {value}</Text>
     </View>
   )
 }
