@@ -1,4 +1,3 @@
-import React, { createContext, useReducer } from 'react'
 import createDataContext from './createDataContext'
 
 const blogReducer = (state, action) => {
