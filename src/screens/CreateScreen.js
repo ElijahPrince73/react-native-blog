@@ -2,12 +2,10 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../context/BlogContext'
 import { View, Text, TextInput ,StyleSheet, Button } from 'react-native'
 
-const CreateScreen = ({ route }) => {
+const CreateScreen = ({ navigation: { navigate } }) => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-  const { state } = useContext(Context)
-
-  const blogPost = state.find((blogPost) => blogPost.id === route.params.id)
+  const { addBlogPost } = useContext(Context)
 
   return (
     <View style={styles.container}>
@@ -23,7 +21,12 @@ const CreateScreen = ({ route }) => {
         value={content} 
         onChangeText={(text) => setContent(text)}
       />
-      <Button title="Add Blog Post"/>
+      <Button 
+        title="Add Blog Post" 
+        onPress={() => addBlogPost(title, content, () => {
+          navigate('Blog')
+        })}
+      />
     </View>
   )
 }
