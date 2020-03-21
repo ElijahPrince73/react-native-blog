@@ -1,15 +1,12 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React, { useContext } from 'react'
+import { Context } from '../context/BlogContext'
+import BlogPostForm from '../components/BlogPostForm'
 
 const EditScreen = ({ route: { params } }) => {
-  console.log(params, "id from show screen");
-  return (
-    <View>
-      <Text>Edit screen {params.id}</Text>
-    </View>
-  )
-}
+  const { state } = useContext(Context)
+  const blogPost = state.find((blogPost) => blogPost.id === params.id)
 
-const styles = StyleSheet.create({})
+  return <BlogPostForm />
+}
 
 export default EditScreen
