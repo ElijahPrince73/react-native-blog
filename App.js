@@ -16,7 +16,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
-          name="Blog" 
+          name="Index" 
           component={IndexScreen} 
           options={({ navigation: { navigate } }) => ({
               headerRight: () => (
